@@ -11,7 +11,7 @@ Design background
 We wanted to make a tool that made including a bunch of JavaScripts in a
 template easy and clean and compiling all those JavaScripts into packed pieces
 in production for optimal performance. The other goal we wanted to achive was
-to expose urls defined in urls.py, MEDIA_URL settings to JavaScript code. Our
+to expose urls defined in urls.py, MEDIA_URL, DEBUG settings to JavaScript code. Our
 future includes making a cleaner implementation for i18n in JavaScript than the
 one provided by Django.
 
@@ -67,4 +67,26 @@ tag.
 
 jshelper view
 -------------
+This view will output named urls, settings.MEDIA_URL, settings.DEBUG (I suggest
+you override this in your template unless you want to recompile the script when
+you change your DEBUG setting) for use in your JavaScript code. You will have
+access to a JavaScript object named JSTOOLS by default, you can change the name
+by setting JSTOOLS_NAMESPACE.
+
+JSTOOLS.settings.MEDIA_URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+settings.MEDIA_URL
+
+JSTOOLS.settings.DEBUG
+~~~~~~~~~~~~~~~~~~~~~~
+settings.DEBUG
+
+JSTOOLS.get_url
+~~~~~~~~~~~~~~~
+This function will get named urls defined in your urls.py. First argument is the
+name of the named url, subsequent arguments are arguments passed to that pattern.
+Examples:
+
+    JSTOOLS.get_url('jshelper');
+    JSTOOLS.get_url('blog_entry', 2010, 04, 25, 'aino-jstools');
 
