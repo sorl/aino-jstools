@@ -8,7 +8,7 @@ except ImportError:
     from setuptools import setup, find_packages
 
 
-fn = abspath(pjoin(dirname(__file__), 'README'))
+fn = abspath(pjoin(dirname(__file__), 'README.rst'))
 fp = open(fn, 'r')
 long_description = fp.read()
 fp.close()
