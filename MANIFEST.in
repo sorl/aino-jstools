@@ -1,6 +1,4 @@
 include LICENSE
 include README
-include jstools/templates/jstools/jshelper.js
-include jstools/compiler/compiler.jar
-include jstools/compiler/COPYING
-include jstools/compiler/README
+recursive-include jstools/templates/*
+recursive-include jstools/compiler/*
