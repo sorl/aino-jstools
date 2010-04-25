@@ -123,17 +123,18 @@ class Command(BaseCommand):
                         '--compilation_level', compilation_level]
                 for url in scripts.replace('\r\n', '\n').split('\n'):
                     url = url.strip()
-                    if url.startswith('http://'):
-                        data = urllib2.urlopen(url).read()
-                        path = write_to_tmp(data, url)
-                    elif url.startswith('/'):
-                        view, a, kw = resolve(urlparse(url)[2])
-                        kw['request'] = HttpRequest()
-                        response = view(*a, **kw)
-                        path = write_to_tmp(response.content, url)
-                    else:
-                        path = url_to_path(url)
-                    args.append('--js=%s' % path)
+                    if url:
+                        if url.startswith('http://'):
+                            data = urllib2.urlopen(url).read()
+                            path = write_to_tmp(data, url)
+                        elif url.startswith('/'):
+                            view, a, kw = resolve(urlparse(url)[2])
+                            kw['request'] = HttpRequest()
+                            response = view(*a, **kw)
+                            path = write_to_tmp(response.content, url)
+                        else:
+                            path = url_to_path(url)
+                        args.append('--js=%s' % path)
                 args.append('--js_output_file=%s' % url_to_path(build))
                 print 'Compiling scripts in `%s` to `%s`' % (template, build)
                 p = Popen(args)
