@@ -1,4 +1,4 @@
 include LICENSE
 include README.rst
-include jstools/templates/jshelper.js
+include jstools/templates/jstools/jshelper.js
 recursive-include jstools/compiler *
