@@ -42,19 +42,19 @@ First define your scripts in a template as follows::
         {% url jshelper %}
     {% endscripts %}
 
-When settings.DEBUG is True this will translate to::
+When ``settings.DEBUG`` is ``True`` this will translate to::
 
     <script src="http://yui.yahooapis.com/3.1.0/build/yui/yui-min.js"></script>
     <script src="{{ MEDIA_URL }}js/a.js"></script>
     <script src="{{ MEDIA_URL }}js/b.js"></script>
     <script src="{% url jshelper %}"></script>
 
-When settings.DEBUG is False this will translate to::
+When ``settings.DEBUG`` is ``False`` this will translate to::
 
     <script src="{{ MEDIA_URL }}js/mysite-min.js?TIMESTAMP"></script>
 
-where TIMESTAMP is based on modification date of
-{{ MEDIA_ROOT }}js/myste-min.js
+where ``TIMESTAMP`` is based on modification date of
+``{{ MEDIA_ROOT }}js/myste-min.js``
 
 
 Compiling
