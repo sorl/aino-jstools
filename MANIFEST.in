@@ -1,4 +1,4 @@
 include LICENSE
 include README
-recursive-include jstools/templates *
+recursive-include jstools/templates *.html *.js *.txt
 recursive-include jstools/compiler *
