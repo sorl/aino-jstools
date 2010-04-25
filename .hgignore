@@ -1,0 +1,10 @@
+syntax: glob
+
+*.pyc
+*.swp
+._*
+.svn
+.DS_Store
+build
+dist
+aino_jstools.egg-info
