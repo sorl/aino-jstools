@@ -17,7 +17,7 @@ from subprocess import Popen, PIPE
 from urlparse import urlparse
 
 
-scripts_re = re.compile(r'{%\s*scripts\s+(\'|")(?P<build>.+)\1\s*%}(?P<scripts>.*?){%\s*endscripts\s*%}', re.S)
+scripts_re = re.compile(r'{%\s*scripts\s+(\'|")(?P<build>.+?)\1\s*%}(?P<scripts>.*?){%\s*endscripts\s*%}', re.S)
 
 
 class JSToolsError(Exception):
