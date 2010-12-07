@@ -16,8 +16,8 @@ fp.close()
 
 setup(
     name='aino-jstools',
-    version='0.1.0.1',
-    url='http://bitbucket.org/aino/aino-jstools/',
+    version='0.1.0.2',
+    url='https://github.com/aino/aino-jstools',
     license='BSD',
     author='Mikko Hellsing',
     author_email='mikko@aino.se',
