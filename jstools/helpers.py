@@ -5,7 +5,7 @@ from jstools.conf import settings
 from os.path import join as pjoin
 
 
-media_url_re = re.compile(r'^%s(?P<url>.*)$' % settings.MEDIA_URL)
+media_url_re = re.compile(r'^%s(?P<url>.*)$' % settings.STATIC_URL)
 
 
 def url_to_path(url, absolute_url=False, absolute_path=True):
@@ -16,7 +16,7 @@ def url_to_path(url, absolute_url=False, absolute_path=True):
             url = m.groups('url')
     components = urllib.unquote(url).split('/')
     if absolute_path:
-        path = pjoin(settings.MEDIA_ROOT, *components)
+        path = pjoin(settings.STATIC_ROOT, *components)
     else:
         path = pjoin(*components)
     return path

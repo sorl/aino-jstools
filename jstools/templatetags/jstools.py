@@ -32,7 +32,7 @@ class ScriptsNode(Node):
             url = url.strip()
             if url:
                 if not url.startswith('http://') and not url.startswith('/'):
-                    url = settings.MEDIA_URL + url
+                    url = settings.STATIC_URL + url
                 scripts.append('<script src="%s"></script>' % url)
         return '\n'.join(scripts)
 

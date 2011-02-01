@@ -1,7 +1,8 @@
 var {{ NS }} = {{ NS }} || {};
 {{ NS }}.settings = {
     DEBUG: {{ settings.DEBUG|yesno:"true,false" }}, {# Override this in the template #}
-    MEDIA_URL: "{{ settings.MEDIA_URL }}"
+    MEDIA_URL: "{{ settings.MEDIA_URL }}",
+    STATIC_URL: "{{ settings.STATIC_URL }}"
 };
 {{ NS }}.raise = function(e) {
     if ({{ NS }}.settings.DEBUG) {
