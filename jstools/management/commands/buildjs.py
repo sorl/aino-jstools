@@ -8,13 +8,16 @@ from django.core.management.base import BaseCommand, CommandError
 from django.core.urlresolvers import resolve
 from django.http import HttpRequest
 from django.template import Template, Context
-from django.utils.importlib import import_module
 from jstools.conf import settings
 from jstools.helpers import url_to_path
 from optparse import make_option
 from os.path import abspath, dirname, join as pjoin, isdir, splitext
 from subprocess import Popen, PIPE
 from urlparse import urlparse
+try:
+    from django.utils.importlib import import_module
+except:
+    from jstools.importlib import import_module
 
 
 scripts_re = re.compile(r'{%\s*scripts\s+(\'|")(?P<build>.+?)\1\s*%}(?P<scripts>.*?){%\s*endscripts\s*%}', re.S)
