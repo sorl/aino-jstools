@@ -1,5 +1,5 @@
 from django.conf import settings
-import defaults
+from jstools.conf import defaults
 
 
 for setting in dir(defaults):

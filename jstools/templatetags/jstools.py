@@ -1,8 +1,8 @@
 import re
 import os
 from django.template import Library, Node, TemplateSyntaxError
-from ..conf import settings
-from ..helpers import url_to_path
+from ..jstools.conf import settings
+from ..jstools.helpers import url_to_path
 from os.path import isfile
 
 
