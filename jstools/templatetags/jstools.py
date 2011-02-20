@@ -23,7 +23,7 @@ class ScriptsNode(Node):
             path = url_to_path(self.build)
             if isfile(path):
                 t = int(os.path.getmtime(path))
-                return '<script src="%s%s?%s"></script>' % (settings.MEDIA_URL,
+                return '<script src="%s%s?%s"></script>' % (settings.STATIC_URL,
                                                             self.build, t)
         block = self.nodelist.render(context)
         urls = block.replace('\r\n', '\n').split('\n')

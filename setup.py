@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='aino-jstools',
-    version='0.1.0.4',
+    version='0.1.0.5',
     description='JavaScript tools for Django',
     long_description=open('README.rst').read(),
     author='Mikko Hellsing',
